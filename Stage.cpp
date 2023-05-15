@@ -1,5 +1,9 @@
 #include "Stage.h"
 
+#include "Floor.h"
+#include "Hole.h"
+#include "BackGround.h"
+
 //コンストラクタ
 Stage::Stage(GameObject* parent)
     :GameObject(parent, "Stage")
@@ -14,6 +18,9 @@ Stage::~Stage()
 //初期化
 void Stage::Initialize()
 {
+    //Instantiate<Floor>(this);
+    //Instantiate<Hole>(this);
+    //Instantiate<BackGround>(this);
 }
 
 //更新

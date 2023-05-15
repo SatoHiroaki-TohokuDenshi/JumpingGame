@@ -1,0 +1,26 @@
+#pragma once
+#include "Engine/GameObject.h"
+
+//Holeを管理するクラス
+class Hole : public GameObject
+{
+
+public:
+    //コンストラクタ
+    Hole(GameObject* parent);
+
+    //デストラクタ
+    ~Hole();
+
+    //初期化
+    void Initialize() override;
+
+    //更新
+    void Update() override;
+
+    //描画
+    void Draw() override;
+
+    //開放
+    void Release() override;
+};

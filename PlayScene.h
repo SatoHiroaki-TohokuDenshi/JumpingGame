@@ -5,6 +5,12 @@
 //Playシーンを管理するクラス
 class PlayScene : public GameObject
 {
+	enum STATE {
+		S_LOAD = 0,		//ロード中
+		S_PLAY,			//遊べる
+		S_CLEAR,		//クリア
+		S_DEAD			//死んだ
+	};
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）

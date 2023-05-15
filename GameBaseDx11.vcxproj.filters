@@ -27,6 +27,12 @@
     <Filter Include="03Scene">
       <UniqueIdentifier>{b4e43513-8e2f-44ac-8cb7-c0e1211edd8d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03Scene\01Play">
+      <UniqueIdentifier>{0cd9581e-df5f-40be-978e-6085fccba506}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03Scene\01Play\StageObject">
+      <UniqueIdentifier>{fe8c524b-cfe7-4e63-8d43-49d3924c09f0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine\BoxCollider.cpp">
@@ -100,10 +106,23 @@
       <Filter>01Engine\ResourceManager</Filter>
     </ClCompile>
     <ClCompile Include="PlayScene.cpp">
-      <Filter>03Scene</Filter>
+      <Filter>03Scene\01Play</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp" />
-    <ClCompile Include="Stage.cpp" />
+    <ClCompile Include="Floor.cpp">
+      <Filter>03Scene\01Play\StageObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>03Scene\01Play</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage.cpp">
+      <Filter>03Scene\01Play</Filter>
+    </ClCompile>
+    <ClCompile Include="BackGround.cpp">
+      <Filter>03Scene\01Play\StageObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Hole.cpp">
+      <Filter>03Scene\01Play\StageObject</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\BoxCollider.h">
@@ -177,10 +196,23 @@
       <Filter>01Engine\ResourceManager</Filter>
     </ClInclude>
     <ClInclude Include="PlayScene.h">
-      <Filter>03Scene</Filter>
+      <Filter>03Scene\01Play</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h" />
-    <ClInclude Include="Stage.h" />
+    <ClInclude Include="Floor.h">
+      <Filter>03Scene\01Play\StageObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>03Scene\01Play</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage.h">
+      <Filter>03Scene\01Play</Filter>
+    </ClInclude>
+    <ClInclude Include="BackGround.h">
+      <Filter>03Scene\01Play\StageObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Hole.h">
+      <Filter>03Scene\01Play\StageObject</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Assets\Shader\Simple2D.hlsl">
