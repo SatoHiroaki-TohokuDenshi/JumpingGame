@@ -4,7 +4,8 @@
 //Playerを管理するクラス
 class Player : public GameObject
 {
-
+    int hModel_;    //モデル番号
+    XMFLOAT3 prevPos_;      //直前の位置を記録
 public:
     //コンストラクタ
     Player(GameObject* parent);
@@ -23,4 +24,10 @@ public:
 
     //開放
     void Release() override;
+
+    void Move();
+
+    //何かに当たった
+    //引数：pTarget 当たった相手
+    void OnCollision(GameObject* pTarget) override;
 };

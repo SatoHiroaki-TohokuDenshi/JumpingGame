@@ -1,6 +1,7 @@
 #include "Floor.h"
 
 #include "Engine/Model.h"
+#include "Engine/BoxCollider.h"
 
 //コンストラクタ
 Floor::Floor(GameObject* parent)
@@ -19,6 +20,10 @@ void Floor::Initialize()
     //モデルデータのロード
     hModel_ = Model::Load("Floor.fbx");
     assert(hModel_ >= 0);
+
+    //箱形の当たり判定を設定
+    BoxCollider* collision = new BoxCollider(XMFLOAT3(-0.5f, -0.5f, 0.5f), XMFLOAT3(1.0f, 1.0f, 1.0f));
+    AddCollider(collision);
 }
 
 //更新

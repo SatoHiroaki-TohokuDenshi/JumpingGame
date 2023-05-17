@@ -1,5 +1,7 @@
 #include "PlayScene.h"
 
+#include "Engine/Camera.h"
+
 #include "Player.h"
 #include "Stage.h"
 
@@ -19,6 +21,11 @@ void PlayScene::Initialize()
 //XV
 void PlayScene::Update()
 {
+	Player* pPlayer =  (Player*)FindObject("Player");
+	float playerX = pPlayer->GetPosition().x;
+
+	Camera::SetPosition(XMFLOAT3(playerX, 5, -15));
+	Camera::SetTarget(XMFLOAT3(playerX, 5, 0));
 }
 
 //•`‰æ
