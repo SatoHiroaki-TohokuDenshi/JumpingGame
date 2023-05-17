@@ -10,6 +10,10 @@ class Stage : public GameObject
         TYPE_BACK,          //背景
     };
 
+    int** table_;
+    int WIDTH_;
+    int HEIGHT_;
+
 public:
     //コンストラクタ
     Stage(GameObject* parent);
@@ -28,6 +32,4 @@ public:
 
     //開放
     void Release() override;
-
-    void SetPosition(XMFLOAT3 pos) { transform_.position_ = pos; }
 };

@@ -4,6 +4,7 @@
 //Holeを管理するクラス
 class Hole : public GameObject
 {
+    int hModel_;    //モデル番号
 
 public:
     //コンストラクタ

@@ -4,6 +4,7 @@
 //BackGroundを管理するクラス
 class BackGround : public GameObject
 {
+    int hModel_;    //モデル番号
 
 public:
     //コンストラクタ

@@ -4,6 +4,7 @@
 //Floorを管理するクラス
 class Floor : public GameObject
 {
+    int hModel_;    //モデル番号
 
 public:
     //コンストラクタ
