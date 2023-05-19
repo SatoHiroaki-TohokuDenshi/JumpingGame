@@ -6,7 +6,8 @@
 
 //コンストラクタ
 Player::Player(GameObject* parent)
-    :GameObject(parent, "Player"), hModel_(-1), prevPos_(transform_.position_)
+    :GameObject(parent, "Player"), hModel_(-1), prevPos_(transform_.position_),
+     jumpFlag_(true), jumpMotion_(0.0f)
 {
 }
 
@@ -31,6 +32,13 @@ void Player::Initialize()
 void Player::Update()
 {
     this->Move();
+    this->Jump();
+
+    //デバッグ作業用のリセットプログラム
+    if (transform_.position_.y <= -20.0f) {
+        transform_.position_ = XMFLOAT3(0.0f, 0.0f, 0.0f);
+        jumpFlag_ = false;
+    }
 }
 
 //描画
@@ -61,6 +69,21 @@ void Player::Move() {
     }
 }
 
+void Player::Jump() {
+    const float GRAVITY = 0.1f;
+
+    if (jumpFlag_) {
+        transform_.position_.y += jumpMotion_;
+        jumpMotion_ -= GRAVITY;
+    }
+    else {
+        if (Input::IsKeyDown(DIK_SPACE)) {
+            jumpMotion_ = 1.0f;
+            jumpFlag_ = true;
+        }
+    }
+}
+
 //何かに当たった
 void Player::OnCollision(GameObject* pTarget)
 {
@@ -68,5 +91,6 @@ void Player::OnCollision(GameObject* pTarget)
     if (pTarget->GetObjectName() == "Floor")
     {
         transform_.position_ = prevPos_;
+        jumpFlag_ = false;
     }
 }
